@@ -1,0 +1,11 @@
+# ── ส่วน AI / agent-workflow (ใช้เฉพาะ MacBook — server ไม่มี Ollama/tmux agent) ──
+lua/josean/plugins/ai.lua
+after/plugin/agent_autoread.lua
+
+# ── ไฟล์ที่ nvim สร้างตอนรัน / ของ OS ──
+.DS_Store
+*.swp
+*.swo
+shada/
+sessions/
+spell/
