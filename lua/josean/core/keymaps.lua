@@ -6,8 +6,9 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
--- save & quit (ใช้ได้ทุก buffer — จำง่าย ไม่ต้องพิมพ์ :q เอง)
-keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" }) -- เซฟไฟล์
+-- save & quit (จำง่าย ไม่ต้องพิมพ์ :q เอง)
+-- หมายเหตุ: ห้าม map <leader>w ตรงๆ เพราะชน prefix ของ auto-session (<leader>wr / <leader>ws)
+keymap.set({ "n", "i" }, "<C-s>", "<cmd>w<CR>", { desc = "Save file" }) -- เซฟไฟล์ (ทั้ง normal/insert)
 keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit window" }) -- ปิดหน้าต่างนี้
 keymap.set("n", "<leader>Q", "<cmd>qa<CR>", { desc = "Quit all (ออก nvim)" }) -- ออก nvim ทั้งหมด
 
