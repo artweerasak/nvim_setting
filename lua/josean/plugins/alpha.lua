@@ -30,7 +30,13 @@ return {
     -- Send config to alpha
     alpha.setup(dashboard.opts)
 
-    -- Disable folding on alpha buffer
-    vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
+    -- Disable folding on alpha buffer + การันตีว่า q ออกได้แน่ (ผูก buffer-local ตรงๆ)
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "alpha",
+      callback = function(ev)
+        vim.opt_local.foldenable = false
+        vim.keymap.set("n", "q", "<cmd>qa<CR>", { buffer = ev.buf, silent = true, desc = "Quit NVIM" })
+      end,
+    })
   end,
 }

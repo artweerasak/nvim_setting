@@ -6,6 +6,11 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
+-- save & quit (ใช้ได้ทุก buffer — จำง่าย ไม่ต้องพิมพ์ :q เอง)
+keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" }) -- เซฟไฟล์
+keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit window" }) -- ปิดหน้าต่างนี้
+keymap.set("n", "<leader>Q", "<cmd>qa<CR>", { desc = "Quit all (ออก nvim)" }) -- ออก nvim ทั้งหมด
+
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
