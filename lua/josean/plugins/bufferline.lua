@@ -2,6 +2,7 @@ return {
   "akinsho/bufferline.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   version = "*",
+  event = "VeryLazy", -- โหลดตอนเปิด nvim เลย → แถบแท็บด้านบนโชว์เสมอ (ไม่ต้องรอกด Shift-l ก่อน)
   opts = {
     options = {
       mode = "buffers",
